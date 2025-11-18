@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cigarette Tracker</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Cigarette Tracker</h1>
+    <div class="buttons">
+      <button id="btn-light">Light Cigarette</button>
+      <button id="btn-putout">Put Out Cigarette</button>
+    </div>
+
+
+    <div class="stats">
+      <p>Last action: <span id="last-action">—</span></p>
+      <p>Total logs: <span id="total-logs">0</span></p>
+    </div>
+
+
+    <div class="log-area">
+      <h2>Recent logs</h2>
+      <pre id="log-output"></pre>
+    </div>
+
+
+    <div class="footer">
+      <small>Logs are saved to a local file in the app data folder.</small>
+    </div>
+  </div>
+
+
+  <script src="renderer.js"></script>
+</body>
+
+</html>
