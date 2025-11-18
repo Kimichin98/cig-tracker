@@ -1,24 +1,32 @@
 const { app, BrowserWindow, ipcMain, Tray, Menu, nativeImage } = require('electron');
+const path = require('path');
+
+let mainWindow;
+let tray;
+let tracker;
 
 
-mainWindow.loadFile('index.html');
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
 
 
-mainWindow.on('minimize', function (event) {
-  event.preventDefault();
-  mainWindow.hide();
-});
+  mainWindow.loadFile('index.html');
 
+  mainWindow.on('minimize', function (event) {
+    event.preventDefault();
+    mainWindow.hide();
+  });
 
-mainWindow.on('closed', function () {
-  mainWindow = null;
-});
-
-
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+}
 
 app.whenReady().then(() => {
   createWindow();
-
 
   const iconPath = path.join(__dirname, 'assets', 'tray.png');
   let trayIcon = undefined;
@@ -27,7 +35,6 @@ app.whenReady().then(() => {
   } catch (e) {
     trayIcon = undefined;
   }
-
 
   tray = new Tray(trayIcon || undefined);
   const contextMenu = Menu.buildFromTemplate([
@@ -53,7 +60,6 @@ app.whenReady().then(() => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });
 });
-
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit();
