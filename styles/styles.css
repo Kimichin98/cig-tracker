@@ -2,10 +2,12 @@ body {
   font-family: Arial, sans-serif;
   background: #f6f7fb;
   color: #222;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-  width: 320px;
+  width: 580px; 
   margin: 18px auto;
   background: #fff;
   padding: 16px;
@@ -31,7 +33,12 @@ button {
   border-radius: 8px;
   border: 1px solid #ddd;
   cursor: pointer;
-  font-weight: 600
+  font-weight: 600;
+  background: #fff;
+}
+
+button:hover {
+  background: #f5f5f5;
 }
 
 button:active {
@@ -47,10 +54,37 @@ button:active {
   padding: 8px
 }
 
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.log-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.clear-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.clear-btn:hover {
+  background: #ff5252;
+}
+
 pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  font-size: 13px
+  white-space: pre; 
+  overflow-x: auto; 
+  font-size: 13px;
+  margin: 0;
+  font-family: 'Courier New', monospace;
 }
 
 .stats {

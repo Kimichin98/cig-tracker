@@ -1,4 +1,35 @@
+# Dependencies
 node_modules/
+
+# Build output
 dist/
+out/
+build/
+
+# Executable files
+*.exe
+*.msi
+*.dmg
+*.app
+*.deb
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
 *.log
-logs.txt
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+
+# Electron build artifacts
+release/
